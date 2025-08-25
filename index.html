@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Edi – 16-year-old from Munich seeking computer science internships" />
+    <title>Edi • Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #0f1221;
+        --bg-elev: rgba(255, 255, 255, 0.06);
+        --text: #e8e9ef;
+        --muted: #b6b8c7;
+        --brand: #7c5cff;
+        --brand-2: #18c8ff;
+        --accent: #00d4ff;
+        --ok: #36d399;
+        --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        --radius: 16px;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background:
+          radial-gradient(1200px 800px at 10% -10%, rgba(124, 92, 255, 0.25), transparent 60%),
+          radial-gradient(1000px 700px at 90% 10%, rgba(24, 200, 255, 0.22), transparent 55%),
+          linear-gradient(180deg, #0a0d1a 0%, #0f1221 100%);
+        min-height: 100vh;
+      }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+      .card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        overflow: hidden;
+      }
+      header.hero {
+        position: relative;
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: center;
+      }
+      .brandline {
+        height: 4px;
+        background: linear-gradient(90deg, var(--brand), var(--brand-2), var(--accent));
+      }
+      h1 {
+        margin: 0 0 8px 0;
+        font-size: clamp(28px, 4vw, 40px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        background: linear-gradient(90deg, #fff, #cfe9ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .subtitle {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .btn {
+        appearance: none;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(255,255,255,0.06);
+        color: var(--text);
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+      }
+      .btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.12); }
+      .btn.primary { background: linear-gradient(90deg, var(--brand), var(--brand-2)); border-color: transparent; }
+      .btn.primary:hover { filter: brightness(1.05); }
+      .btn.ghost { background: transparent; }
+      section {
+        padding: 8px 32px 28px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+      }
+      .bio {
+        grid-column: span 12;
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.7;
+      }
+      .callout {
+        grid-column: span 12;
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px dashed rgba(255,255,255,0.2);
+        color: #d7ffe9;
+        background: linear-gradient(180deg, rgba(54,211,153,0.15), rgba(54,211,153,0.05));
+      }
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .skill {
+        position: relative;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: radial-gradient(120% 140% at 0% 0%, rgba(124,92,255,0.35), rgba(255,255,255,0.06));
+        color: #ffffff;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        box-shadow: 0 8px 18px rgba(124,92,255,0.25);
+      }
+      .skill:nth-child(2) { background: radial-gradient(120% 140% at 0% 0%, rgba(24,200,255,0.35), rgba(255,255,255,0.06)); box-shadow: 0 8px 18px rgba(24,200,255,0.25); }
+      .skill:nth-child(3) { background: radial-gradient(120% 140% at 0% 0%, rgba(0,212,255,0.35), rgba(255,255,255,0.06)); box-shadow: 0 8px 18px rgba(0,212,255,0.25); }
+      .skill:nth-child(4) { background: radial-gradient(120% 140% at 0% 0%, rgba(255,165,0,0.35), rgba(255,255,255,0.06)); box-shadow: 0 8px 18px rgba(255,165,0,0.25); }
+      .skill:nth-child(5) { background: radial-gradient(120% 140% at 0% 0%, rgba(255,105,180,0.35), rgba(255,255,255,0.06)); box-shadow: 0 8px 18px rgba(255,105,180,0.25); }
+      .section-title {
+        margin: 8px 0 10px;
+        font-size: 14px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .footer {
+        padding: 18px 32px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 14px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      }
+      .badges { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+      .badge {
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.14);
+        color: var(--text);
+        background: rgba(255,255,255,0.06);
+        font-size: 12px;
+        font-weight: 600;
+      }
+      @media (max-width: 720px) {
+        header.hero { grid-template-columns: 1fr; }
+        .actions { justify-content: flex-start; }
+      }
+      .theme-toggle { 
+        width: 42px; 
+        height: 42px; 
+        border-radius: 12px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+      }
+      .sun, .moon { font-size: 18px; }
+      body.light {
+        --bg: #f7f8fc;
+        --bg-elev: rgba(0,0,0,0.04);
+        --text: #0f1221;
+        --muted: #4a4e69;
+        background:
+          radial-gradient(1200px 800px at 10% -10%, rgba(124, 92, 255, 0.15), transparent 60%),
+          radial-gradient(1000px 700px at 90% 10%, rgba(24, 200, 255, 0.12), transparent 55%),
+          linear-gradient(180deg, #fbfcff 0%, #eef1ff 100%);
+      }
+      body.light h1 { background: linear-gradient(90deg, #151a33, #3b4975); color: transparent; -webkit-background-clip: text; background-clip: text; }
+      /* Higher contrast in light theme */
+      body.light .card { background: #ffffff; border-color: rgba(0,0,0,0.08); }
+      body.light .btn { color: #151a33; background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.12); }
+      body.light .btn:hover { background: rgba(0,0,0,0.08); }
+      body.light .badge { color: #151a33; background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.12); }
+      body.light .skill {
+        color: #151a33;
+        border-color: rgba(0,0,0,0.08);
+        background: radial-gradient(120% 140% at 0% 0%, rgba(124,92,255,0.18), #ffffff);
+        box-shadow: 0 6px 14px rgba(15, 18, 33, 0.08);
+      }
+      body.light .skill:nth-child(2) { background: radial-gradient(120% 140% at 0% 0%, rgba(24,200,255,0.18), #ffffff); box-shadow: 0 6px 14px rgba(15,18,33,0.08); }
+      body.light .skill:nth-child(3) { background: radial-gradient(120% 140% at 0% 0%, rgba(0,212,255,0.18), #ffffff); box-shadow: 0 6px 14px rgba(15,18,33,0.08); }
+      body.light .skill:nth-child(4) { background: radial-gradient(120% 140% at 0% 0%, rgba(255,165,0,0.22), #ffffff); box-shadow: 0 6px 14px rgba(15,18,33,0.08); }
+      body.light .skill:nth-child(5) { background: radial-gradient(120% 140% at 0% 0%, rgba(255,105,180,0.20), #ffffff); box-shadow: 0 6px 14px rgba(15,18,33,0.08); }
+      body.light .callout {
+        color: #0e4b2f;
+        background: linear-gradient(180deg, rgba(54,211,153,0.18), rgba(54,211,153,0.12));
+        border-color: rgba(14,75,47,0.28);
+      }
+      a { color: inherit; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="brandline"></div>
+        <header class="hero">
+          <div>
+            <h1>Hi, I'm Edi</h1>
+            <p class="subtitle">16-year-old from Munich • Aspiring Computer Science Intern</p>
+          </div>
+          <div class="actions">
+            <button class="btn theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle theme"><span class="sun">☀️</span></button>
+            <a class="btn ghost" href="#contact" aria-label="Jump to contact">Contact</a>
+          </div>
+        </header>
+        <section>
+          <div class="grid">
+            <div class="bio">
+              <div class="section-title">About</div>
+              <p>
+                I'm Edi from Munich, 16 years old, and actively seeking computer science internships to grow my skills and contribute to real projects. I enjoy building clean, interactive web experiences and learning by doing.
+              </p>
+            </div>
+            <div class="callout">
+              Open to internship opportunities in and around Munich — part-time, holiday work, or short placements. I'm motivated, quick to learn, and excited to collaborate.
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">Skills</div>
+          <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">jQuery</div>
+            <div class="skill">SCSS</div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">What I enjoy</div>
+          <div class="badges">
+            <span class="badge">Building responsive UIs</span>
+            <span class="badge">Turning designs into code</span>
+            <span class="badge">Learning modern JS</span>
+            <span class="badge">Collaborating on real projects</span>
+          </div>
+        </section>
+        <div class="footer" id="contact">
+          <span>Based in Munich, Germany</span>
+          <div class="actions">
+            <a class="btn ghost" href="mailto:edicitaku2009@gmail.com" aria-label="Email Edi">Email me</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Munich" target="_blank" rel="noreferrer" aria-label="See Munich on map">Location</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function() {
+        const storageKey = 'edi-theme';
+        const body = document.body;
+        const saved = localStorage.getItem(storageKey);
+        if (saved === 'light') body.classList.add('light');
+        const toggle = document.getElementById('themeToggle');
+        toggle.addEventListener('click', function() {
+          body.classList.toggle('light');
+          localStorage.setItem(storageKey, body.classList.contains('light') ? 'light' : 'dark');
+        });
+      })();
+    </script>
+  </body>
+  </html>
+
+
